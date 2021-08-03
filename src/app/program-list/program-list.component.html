@@ -1,0 +1,9 @@
+<p *ngIf="selectedProgram">{{selectedProgram.name | uppercase}}</p>
+<ul class="programs">
+    <li [class.selected]="program === selectedProgram" 
+       *ngFor="let program of programName" (click)="onSelect(program)">            
+        <span  class="badge" >Program name: {{program.id}} </span>  {{ program.name | uppercase  }}  
+         <input  [(ngModel)]="program.name" placeholder="name">
+    </li>    
+</ul>
+
